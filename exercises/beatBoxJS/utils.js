@@ -4,6 +4,10 @@
  * HINT: Create a play function to play the audio if called 
  */
 class Beat {
+    constructor(soundPath) {
+        let sound = new Audio();
+    }
+    play()
 }
 
 
@@ -25,7 +29,7 @@ class Button {
      * Select function to set the background color and boxShadow
      */
     select = () => {
-    }
+    };
 
     /**
      * Deselect function to reset background color and boxShadow
