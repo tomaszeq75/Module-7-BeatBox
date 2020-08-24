@@ -4,10 +4,13 @@
  * HINT: Create a play function to play the audio if called 
  */
 class Beat {
-    constructor(soundPath) {
-        let sound = new Audio();
+    constructor(audioSrc) {
+        this.audio = new Audio(audioSrc);
     }
-    play()
+    play () {
+        this.audio.currentTime = 0;
+        this.audio.play();
+    }
 }
 
 
@@ -16,24 +19,20 @@ class Beat {
  * Button class that keeps track of the button color based on a press
  */
 class Button {
-    constructor(color, keyCode){
-    }
+    constructor(color, keyCode) {}
 
     /**
      * Set the button color based on color specified
      */
-    setButtonColorInHTML = () => {
-    }
+    setButtonColorInHTML = () => {}
 
     /**
      * Select function to set the background color and boxShadow
      */
-    select = () => {
-    };
+    select = () => {};
 
     /**
      * Deselect function to reset background color and boxShadow
      */
-    deselect = () => {
-    }
+    deselect = () => {}
 }
