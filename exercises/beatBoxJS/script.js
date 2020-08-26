@@ -4,9 +4,9 @@
  * ok: Complete triggerBeat() to play upon the press of a,s,d,f,g,h,j,k,l
  * ok: Button pt1: Initialize color and element values
  * ok: Button pt2: Set button color upon initialization | Initialize button in beats["65"]
- * TODO: Button pt3: Complete select function to set the color and shadow of button upon pressing
- * TODO: Button pt4: Call the select() function upon key press ;)
- * TODO: Button pt5: Add transition for button selection
+ * ok: Button pt3: Complete select function to set the color and shadow of button upon pressing
+ * ok: Button pt4: Call the select() function upon key press ;)
+ * ok: Button pt5: Add transition for button selection
  * TODO: Button pt6: Remove the button style upon transition end | Use deselect function
  * TODO: Complete all button instances with the following colors
  * TODO: Add background image
@@ -59,7 +59,12 @@ let beats = {
  * HINT: use the keyCode
  */
 triggerBeat = (event) => {
-    beats[event.keyCode].button.select();
+    const keyCode = event.keyCode;
+    if (keyCode in beats) {
+        let keyPress = beats[keyCode];
+        keyPress.beat.play();
+        keyPress.button.select();
+    }
     console.log(event.keyCode, event.key);
 };
 
@@ -69,4 +74,8 @@ triggerBeat = (event) => {
  */
 document.addEventListener("keydown", (event) => {
     triggerBeat(event);
+});
+
+document.addEventListener("keyup", (event) => {
+    beats[event.keyCode].button.deselect();
 });

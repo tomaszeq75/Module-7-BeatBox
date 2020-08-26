@@ -41,9 +41,13 @@ class Button {
         this.element.style.boxShadow = `0 0 10px ${this.color}`;
         this.element.style.backgroundColor = this.color;
     };
-
+    
     /**
      * Deselect function to reset background color and boxShadow
      */
-    deselect() {}
+    deselect() {
+        this.element.style.boxShadow = "none";
+        this.element.style.backgroundColor = "transparent";
+        console.log("deselect");
+    }
 }
