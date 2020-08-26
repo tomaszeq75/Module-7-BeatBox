@@ -7,7 +7,7 @@ class Beat {
     constructor(audioSrc) {
         this.audio = new Audio(audioSrc);
     }
-    play () {
+    play() {
         this.audio.currentTime = 0;
         this.audio.play();
     }
@@ -23,23 +23,27 @@ class Button {
         this.color = color;
         this.keyCode = keyCode;
         this.element = document.getElementById(keyCode);
+        this.setButtonColorInHTML();
         console.log(this.element);
     }
-    
+
     /**
      * Set the button color based on color specified
      */
-    setButtonColorInHTML = () => {
-        // element.style.
+    setButtonColorInHTML() {
+        this.element.style.borderColor = this.color;
     }
 
     /**
      * Select function to set the background color and boxShadow
      */
-    select = () => {};
+    select() {
+        this.element.style.boxShadow = `0 0 10px ${this.color}`;
+        this.element.style.backgroundColor = this.color;
+    };
 
     /**
      * Deselect function to reset background color and boxShadow
      */
-    deselect = () => {}
+    deselect() {}
 }
