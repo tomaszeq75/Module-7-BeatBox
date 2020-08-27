@@ -7,9 +7,9 @@
  * ok: Button pt3: Complete select function to set the color and shadow of button upon pressing
  * ok: Button pt4: Call the select() function upon key press ;)
  * ok: Button pt5: Add transition for button selection
- * TODO: Button pt6: Remove the button style upon transition end | Use deselect function
- * TODO: Complete all button instances with the following colors
- * TODO: Add background image
+ * ok: Button pt6: Remove the button style upon transition end | Use deselect function
+ * ok: Complete all button instances with the following colors
+ * ok: Add background image
  * First 3: #00fffe
  * 4,5,6,7: #FF00FF
  * 8, 9: #FFFFFF
@@ -76,6 +76,6 @@ document.addEventListener("keydown", (event) => {
     triggerBeat(event);
 });
 
-document.addEventListener("keyup", (event) => {
-    beats[event.keyCode].button.deselect();
-});
+// document.addEventListener("keyup", (event) => {
+//     beats[event.keyCode].button.deselect();
+// });

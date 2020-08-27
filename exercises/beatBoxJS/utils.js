@@ -24,7 +24,9 @@ class Button {
         this.keyCode = keyCode;
         this.element = document.getElementById(keyCode);
         this.setButtonColorInHTML();
-        console.log(this.element);
+        this.setKeyupListener();
+
+        // this.setTransitionListener();
     }
 
     /**
@@ -41,13 +43,29 @@ class Button {
         this.element.style.boxShadow = `0 0 10px ${this.color}`;
         this.element.style.backgroundColor = this.color;
     };
-    
+
     /**
      * Deselect function to reset background color and boxShadow
      */
     deselect() {
         this.element.style.boxShadow = "none";
         this.element.style.backgroundColor = "transparent";
-        console.log("deselect");
     }
+
+    setKeyupListener() {
+        document.addEventListener("keyup", (event) => {
+            if (event.keyCode == this.keyCode) {
+                this.deselect();
+            }
+        });
+    }
+
+    /**
+     * rozwiązanie z video
+     */
+    // setTransitionListener() {
+    //     document.addEventListener("transitionend", (event) => {
+    //         this.deselect();
+    //     });
+    // }
 }
